@@ -77,3 +77,37 @@ void trimSpaces(char *tekst) {
 }
 
 ```
+
+# Napisz funkcję usuwającą (poprzez skrócenie tekstu)wszystkie spacje z łańcucha podawanego jako parametr tej funkcji.
+
+```c
+void removeAllSpaces(char *tekst) {
+    size_t len = strlen(tekst);
+    size_t j = 0;
+
+
+    for (size_t i = 0; i < len; i++) {
+        if (tekst[i] != ' ') {
+            tekst[j++] = tekst[i];
+        }
+    }
+
+    tekst[j] = '\0';
+}
+
+```
+
+# Napisz funkcję usuwającą z zadanego łańcucha (poprzez skrócenie tekstu) wszystkie bezpośrednie powtórzenia liter np. zamieniającą tekst “kommputter” na ”komputer”.
+
+```c
+void usun(char *tekst) {
+    size_t len = strlen(tekst);
+    size_t j=0;
+    for (size_t i = 1; i < len; i++) {
+        if(tekst[j]!=tekst[i]) {
+            tekst[++j]=tekst[i];
+        }
+    }
+    tekst[j+1] = '\0';
+}
+```
