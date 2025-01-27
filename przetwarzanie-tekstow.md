@@ -111,3 +111,35 @@ void usun(char *tekst) {
     tekst[j+1] = '\0';
 }
 ```
+
+# Napisz funkcję dodającą zadaną ilość spacji na początku zadanego łańcucha tekst(wcześniejsza zawartość tekstu przesuwana jest na dalsze pozycje)
+
+```c
+void dodaj_spacje(int ile, char *tekst) {
+    size_t len = strlen(tekst);
+
+    memmove(tekst+ile, tekst, len+1);
+
+    for(size_t i = 0; i<ile; i++){
+        tekst[i] = ' ';
+    }
+}
+
+```
+
+# Napisz funkcję usuwającą z łańcucha tekst wszystkie litery poczynając od pozycji pocz do litery na pozycji kon.
+
+```c
+void usun_od(int pocz, int konc, char *tekst) {
+    size_t len = strlen(tekst)
+
+    size_t przesun = konc - pocz +1;
+    memmove(&tekst[pocz], &tekst[konc+1], len-konc); // przesun na pozycje pocz,
+    // rzeczy od momentu pierwszego znaku po konc,
+    // rzeczy o rozmiarze len-kon
+
+    tekst[len-przesun]='\0';
+
+
+}
+```
