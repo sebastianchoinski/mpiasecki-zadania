@@ -143,3 +143,36 @@ void usun_od(int pocz, int konc, char *tekst) {
 
 }
 ```
+
+# Napisz funkcję wyrównującą długość zadanego tekst'u do N znaków, poprzez dodanie odpowiedniej ilości spacji na końcu tego łańcucha.
+
+```c
+void wyrownaj(int N, char *tekst) {
+    size_t len = strlen(tekst);
+
+    for(size_t i = len; i<=N; i++) {
+        tekst[i] = ' ';
+    }
+    tekst[N] = '\0';
+
+}
+
+```
+
+# Napisz funkcję sprawdzającą czy zadany łańcuch znaków ma symetryczną zawartość tzn, pierwszy znak jest równy ostatniemu, drugi przedostatniemu itd.
+
+```c
+void sprawdz_symetrie(char *tekst) {
+    size_t len = strlen(tekst);
+    size_t ostatni = len - 1;
+
+    for (size_t i = 0; i < len / 2; i++) {
+        if (tekst[i] != tekst[ostatni - i]) {
+            printf("niesymetryczny\n");
+            return;
+        }
+    }
+
+    printf("symetryczny\n");
+}
+```
